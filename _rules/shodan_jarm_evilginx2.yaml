@@ -1,0 +1,12 @@
+id: k0l1m2n3-o4p5-6q7r-8s9t-0u1v2w3x4y5z
+title: Detect EvilGinx2
+description: Detects EvilGinx2 Phishing Kit infrastructure via JARM fingerprint.
+author: aj-tap
+tags:
+  - shodan
+  - c2
+  - jarm
+  - evilginx
+  - phishing
+syntax: |
+  from 'shodan' | grep('20d14d20d21d20d20c20d14d20d20daddf8a68a1444c74b6dbe09910a511e6', this)

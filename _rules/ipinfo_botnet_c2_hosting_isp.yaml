@@ -1,0 +1,11 @@
+id: b2c3d4e5-f6g7-8901-2345-67890abcdef1
+title: Botnet C2 Hosting ISP
+description: IP belongs to an Internet Service or Hosting Provider that has a historical or ongoing association with hosting infrastructure used for botnet command and control (C2) servers, compromised hosts, or other botnet-related activities. Remember that even these providers host legitimate services, so further analysis of the traffic will be necessary to confirm malicious activity.
+author: aj-tap
+tags:
+  - ipinfo
+  - hosting
+  - botnet
+  - c2
+syntax: |
+  from 'ipinfo' | grep('Frantech',org) or grep('Ponynet',org) or grep('BuyVM',org) or grep('OVH',org) or grep('Hetzner',org) or grep('DigitalOcean',org) or grep('Linode',org) or grep('Akamai',org) or grep('Choopa',org) or grep('Vultr',org) or grep('Contabo',org) or grep('LeaseWeb',org) or grep('RamNode',org) or grep('Psychz Networks',org)

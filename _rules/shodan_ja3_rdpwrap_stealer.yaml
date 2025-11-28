@@ -1,0 +1,11 @@
+id: v1w2x3y4-z5a6-7b8c-9d0e-1f2g3h4i5j6k
+title: Detect RDPWrap Stealer
+description: Detects RDPWrap Stealer via JA3 fingerprint.
+author: aj-tap
+tags:
+  - shodan
+  - ja3
+  - stealer
+  - rdpwrap
+syntax: |
+  from 'shodan' | grep('c1971883c84a22ed1dd006a435c5bbe1', this)

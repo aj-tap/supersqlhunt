@@ -1,0 +1,12 @@
+id: c2a1b3c4-d5e6-7f8g-9h0i-1j2k3l4m5n6o
+title: Detect Python3 Generic C2s (Mythic, Shad0w, GRAT2, SILENTTRINITY)
+description: Detects generic Python 3 C2 frameworks (Mythic, MacC2 v3.8.2, Shad0w, GRAT2, SILENTTRINITY) using Shodan JARM fingerprints. High potential for false positives as it may match generic Python SSL implementations.
+author: aj-tap
+tags:
+  - shodan
+  - c2
+  - jarm
+  - python
+  - mythic
+syntax: |
+  from 'shodan' | grep('2ad2ad0002ad2ad00042d42d000000ad9bf51cc3f5a1e29eecb81d0c7b06eb', this)

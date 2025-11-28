@@ -1,0 +1,11 @@
+id: 4d5e6f7g-8h9i-0j1k-2l3m-4n5o6p7q8r9s
+title: Global - Bad Certificate PUA
+description: Detects known bad certificate signers associated with Potentially Unwanted Applications (PUA).
+author: aj-tap
+tags:
+  - global
+  - certificate
+  - pua
+  - malware
+syntax: |
+  from * | grep('Echo Infini Sdn. Bhd.',this) or grep('Glint By J Sdn. Bhd',this) or grep('Summit Nexus Holdings Llc, Bhd',this)

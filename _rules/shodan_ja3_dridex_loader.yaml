@@ -1,0 +1,11 @@
+id: q6r7s8t9-u0v1-2w3x-4y5z-6a7b8c9d0e1f
+title: Detect Dridex Loader
+description: Detects Dridex Loader variants via JA3 fingerprint.
+author: aj-tap
+tags:
+  - shodan
+  - ja3
+  - dridex
+  - loader
+syntax: |
+  from 'shodan' | grep('23f2b0b91bc8bb56a695bc5b97ab0eda', this)

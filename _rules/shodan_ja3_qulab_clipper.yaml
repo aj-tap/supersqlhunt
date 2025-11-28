@@ -1,0 +1,11 @@
+id: x3y4z5a6-b7c8-9d0e-1f2g-3h4i5j6k7l8m
+title: Detect Qulab Clipper
+description: Detects Qulab Clipper via JA3 fingerprint.
+author: aj-tap
+tags:
+  - shodan
+  - ja3
+  - clipper
+  - qulab
+syntax: |
+  from 'shodan' | grep('5182f54f9c6e99d117d9dde3fa2b4cff', this)

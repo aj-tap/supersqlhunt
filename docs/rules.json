@@ -1,0 +1,356 @@
+[
+  {
+    "id": "4d5e6f7g-8h9i-0j1k-2l3m-4n5o6p7q8r9s",
+    "title": "Global - Bad Certificate PUA",
+    "description": "Detects known bad certificate signers associated with Potentially Unwanted Applications (PUA).",
+    "author": "aj-tap",
+    "tags": [
+      "global",
+      "certificate",
+      "pua",
+      "malware"
+    ],
+    "syntax": "from * | grep('Echo Infini Sdn. Bhd.',this) or grep('Glint By J Sdn. Bhd',this) or grep('Summit Nexus Holdings Llc, Bhd',this)\n"
+  },
+  {
+    "id": "b2c3d4e5-f6g7-8901-2345-67890abcdef1",
+    "title": "Botnet C2 Hosting ISP",
+    "description": "IP belongs to an Internet Service or Hosting Provider that has a historical or ongoing association with hosting infrastructure used for botnet command and control (C2) servers, compromised hosts, or other botnet-related activities. Remember that even these providers host legitimate services, so further analysis of the traffic will be necessary to confirm malicious activity.",
+    "author": "aj-tap",
+    "tags": [
+      "ipinfo",
+      "hosting",
+      "botnet",
+      "c2"
+    ],
+    "syntax": "from 'ipinfo' | grep('Frantech',org) or grep('Ponynet',org) or grep('BuyVM',org) or grep('OVH',org) or grep('Hetzner',org) or grep('DigitalOcean',org) or grep('Linode',org) or grep('Akamai',org) or grep('Choopa',org) or grep('Vultr',org) or grep('Contabo',org) or grep('LeaseWeb',org) or grep('RamNode',org) or grep('Psychz Networks',org)\n"
+  },
+  {
+    "id": "e3365100-2d49-47fa-b73a-f03981fe1f69",
+    "title": "Detect Cobaltstrike C2",
+    "description": "This rule detects known c2 jarm hashes.",
+    "author": "aj-tap",
+    "tags": [
+      "c2",
+      "cobaltstrike",
+      "shodan"
+    ],
+    "syntax": "from shodan | grep('29d21b20d29d29d21c41d21b21b41d494e0df9532e75299f15ba73156cee38',this) | quiet(this)\n",
+    "source": "internetstormcast"
+  },
+  {
+    "id": "t9u0v1w2-x3y4-5z6a-7b8c-9d0e1f2g3h4i",
+    "title": "Detect Adwind RAT",
+    "description": "Detects Adwind RAT via JA3 fingerprint.",
+    "author": "aj-tap",
+    "tags": [
+      "shodan",
+      "ja3",
+      "rat",
+      "adwind"
+    ],
+    "syntax": "from 'shodan' | grep('2db6873021f2a95daa7de0d93a1d1bf2', this)\n"
+  },
+  {
+    "id": "y4z5a6b7-c8d9-0e1f-2g3h-4i5j6k7l8m9n",
+    "title": "Detect AgentZSZ-nexgen",
+    "description": "Detects AgentZSZ-nexgen malware via JA3 fingerprint.",
+    "author": "aj-tap",
+    "tags": [
+      "shodan",
+      "ja3",
+      "agentzsz"
+    ],
+    "syntax": "from 'shodan' | grep('422b752378bb490ddc436b9be9527ac0', this)\n"
+  },
+  {
+    "id": "q6r7s8t9-u0v1-2w3x-4y5z-6a7b8c9d0e1f",
+    "title": "Detect Dridex Loader",
+    "description": "Detects Dridex Loader variants via JA3 fingerprint.",
+    "author": "aj-tap",
+    "tags": [
+      "shodan",
+      "ja3",
+      "dridex",
+      "loader"
+    ],
+    "syntax": "from 'shodan' | grep('23f2b0b91bc8bb56a695bc5b97ab0eda', this)\n"
+  },
+  {
+    "id": "o4p5q6r7-s8t9-0u1v-2w3x-4y5z6a7b8c9d",
+    "title": "Detect Generic Suspicious TLS Client (PUP, Throwback, Adernhaste)",
+    "description": "Detects a generic suspicious JA3 TLS client fingerprint reused by multiple threats including PUPs, SilentBreak Throwback, and Adernhaste.",
+    "author": "aj-tap",
+    "tags": [
+      "shodan",
+      "ja3",
+      "suspicious",
+      "throwback"
+    ],
+    "syntax": "from 'shodan' | grep('7dcce5b76c8b17472d024758970a406b', this)\n"
+  },
+  {
+    "id": "p5q6r7s8-t9u0-1v2w-3x4y-5z6a7b8c9d0e",
+    "title": "Detect HuadServHelper and APT-Sidewinder",
+    "description": "Detects HuadServHelper and APT-Sidewinder activity via shared JA3 fingerprint.",
+    "author": "aj-tap",
+    "tags": [
+      "shodan",
+      "ja3",
+      "apt",
+      "sidewinder"
+    ],
+    "syntax": "from 'shodan' | grep('1d095e68489d3c535297cd8dffb06cb9', this)\n"
+  },
+  {
+    "id": "w2x3y4z5-a6b7-8c9d-0e1f-2g3h4i5j6k7l",
+    "title": "Detect OSTP Backswap",
+    "description": "Detects OSTP Backswap malware via JA3 fingerprint.",
+    "author": "aj-tap",
+    "tags": [
+      "shodan",
+      "ja3",
+      "backswap",
+      "banking-trojan"
+    ],
+    "syntax": "from 'shodan' | grep('8c4a22651d328568ec66382a84fc505f', this)\n"
+  },
+  {
+    "id": "u0v1w2x3-y4z5-6a7b-8c9d-0e1f2g3h4i5j",
+    "title": "Detect PowerShell Dropper Script",
+    "description": "Detects PowerShell Dropper scripts via JA3 fingerprint.",
+    "author": "aj-tap",
+    "tags": [
+      "shodan",
+      "ja3",
+      "dropper",
+      "powershell"
+    ],
+    "syntax": "from 'shodan' | grep('6734f37431670b3ab4292b8f60f29984', this)\n"
+  },
+  {
+    "id": "s8t9u0v1-w2x3-4y5z-6a7b-8c9d0e1f2g3h",
+    "title": "Detect Qbot",
+    "description": "Detects Qbot (Quakbot) malware via JA3 fingerprint.",
+    "author": "aj-tap",
+    "tags": [
+      "shodan",
+      "ja3",
+      "qbot",
+      "banking-trojan"
+    ],
+    "syntax": "from 'shodan' | grep('f5e62b5a2ed9467df09fae7a8a54dda6', this)\n"
+  },
+  {
+    "id": "x3y4z5a6-b7c8-9d0e-1f2g-3h4i5j6k7l8m",
+    "title": "Detect Qulab Clipper",
+    "description": "Detects Qulab Clipper via JA3 fingerprint.",
+    "author": "aj-tap",
+    "tags": [
+      "shodan",
+      "ja3",
+      "clipper",
+      "qulab"
+    ],
+    "syntax": "from 'shodan' | grep('5182f54f9c6e99d117d9dde3fa2b4cff', this)\n"
+  },
+  {
+    "id": "v1w2x3y4-z5a6-7b8c-9d0e-1f2g3h4i5j6k",
+    "title": "Detect RDPWrap Stealer",
+    "description": "Detects RDPWrap Stealer via JA3 fingerprint.",
+    "author": "aj-tap",
+    "tags": [
+      "shodan",
+      "ja3",
+      "stealer",
+      "rdpwrap"
+    ],
+    "syntax": "from 'shodan' | grep('c1971883c84a22ed1dd006a435c5bbe1', this)\n"
+  },
+  {
+    "id": "r7s8t9u0-v1w2-3x4y-5z6a-7b8c9d0e1f2g",
+    "title": "Detect ServHelper and Sodinokibi Ransomware",
+    "description": "Detects ServHelper backdoor and Sodinokibi (REvil) ransomware via shared JA3 fingerprint.",
+    "author": "aj-tap",
+    "tags": [
+      "shodan",
+      "ja3",
+      "ransomware",
+      "revil",
+      "servhelper"
+    ],
+    "syntax": "from 'shodan' | grep('05af1f5ca1b87cc9cc9b25185115607d', this)\n"
+  },
+  {
+    "id": "z5a6b7c8-d9e0-1f2g-3h4i-5j6k7l8m9n0o",
+    "title": "Detect VN Malware",
+    "description": "Detects VN Malware via JA3 fingerprint.",
+    "author": "aj-tap",
+    "tags": [
+      "shodan",
+      "ja3",
+      "vn-malware"
+    ],
+    "syntax": "from 'shodan' | grep('c3eb28afff6a10a11ba01e82aaea2825', this)\n"
+  },
+  {
+    "id": "f5g6h7i8-j9k0-1l2m-3n4o-5p6q7r8s9t0u",
+    "title": "Detect Cobalt Strike (Java 11)",
+    "description": "Detects Cobalt Strike Beacon/Listener running on Java 11 via JARM fingerprint.",
+    "author": "aj-tap",
+    "tags": [
+      "shodan",
+      "c2",
+      "jarm",
+      "cobaltstrike"
+    ],
+    "syntax": "from 'shodan' | grep('07d14d16d21d21d07c42d41d00041d24a458a375eef0c576d23a7bab9a9fb1', this)\n"
+  },
+  {
+    "id": "m2n3o4p5-q6r7-8s9t-0u1v-2w3x4y5z6a7b",
+    "title": "Detect Covenant C2",
+    "description": "Detects Covenant C2 (.NET Core) infrastructure via JARM fingerprint.",
+    "author": "aj-tap",
+    "tags": [
+      "shodan",
+      "c2",
+      "jarm",
+      "covenant",
+      "dotnet"
+    ],
+    "syntax": "from 'shodan' | grep('21d14d00000000021c21d14d21d21d1ee8ae98bf3ef941e91529a93ac62b8b', this)\n"
+  },
+  {
+    "id": "i8j9k0l1-m2n3-4o5p-6q7r-8s9t0u1v2w3x",
+    "title": "Detect Deimos C2",
+    "description": "Detects Deimos C2 (Go-Lang based) infrastructure via JARM fingerprint.",
+    "author": "aj-tap",
+    "tags": [
+      "shodan",
+      "c2",
+      "jarm",
+      "deimos",
+      "golang"
+    ],
+    "syntax": "from 'shodan' | grep('00000000000000000041d00000041d9535d5979f591ae8e547c5e5743e5b64', this)\n"
+  },
+  {
+    "id": "k0l1m2n3-o4p5-6q7r-8s9t-0u1v2w3x4y5z",
+    "title": "Detect EvilGinx2",
+    "description": "Detects EvilGinx2 Phishing Kit infrastructure via JARM fingerprint.",
+    "author": "aj-tap",
+    "tags": [
+      "shodan",
+      "c2",
+      "jarm",
+      "evilginx",
+      "phishing"
+    ],
+    "syntax": "from 'shodan' | grep('20d14d20d21d20d20c20d14d20d20daddf8a68a1444c74b6dbe09910a511e6', this)\n"
+  },
+  {
+    "id": "n3o4p5q6-r7s8-9t0u-1v2w-3x4y5z6a7b8c",
+    "title": "Detect Get2 C2",
+    "description": "Detects Get2 C2 infrastructure via JARM fingerprint.",
+    "author": "aj-tap",
+    "tags": [
+      "shodan",
+      "c2",
+      "jarm",
+      "get2"
+    ],
+    "syntax": "from 'shodan' | grep('07d19d12d21d21d07c07d19d07d21da5a8ab90bcc6bf8bbc6fbec4bcaa8219', this)\n"
+  },
+  {
+    "id": "l1m2n3o4-p5q6-7r8s-9t0u-1v2w3x4y5z6a",
+    "title": "Detect MacShell and MacShellSwift",
+    "description": "Detects MacShell and MacShellSwift variants via JARM fingerprint.",
+    "author": "aj-tap",
+    "tags": [
+      "shodan",
+      "c2",
+      "jarm",
+      "macshell"
+    ],
+    "syntax": "from 'shodan' | grep('2ad000000000000000000000000000eeebf944d0b023a00f510f06a29b4f46', this)\n"
+  },
+  {
+    "id": "d3e4f5g6-h7i8-9j0k-1l2m-3n4o5p6q7r8s",
+    "title": "Detect Metasploit SSL Listener (Variant 1)",
+    "description": "Detects Metasploit Framework SSL listeners (Variant 1) via JARM fingerprint.",
+    "author": "aj-tap",
+    "tags": [
+      "shodan",
+      "c2",
+      "jarm",
+      "metasploit"
+    ],
+    "syntax": "from 'shodan' | grep('07d14d16d21d21d00042d43d000000aa99ce74e2c6d013c745aa52b5cc042d', this)\n"
+  },
+  {
+    "id": "e4f5g6h7-i8j9-0k1l-2m3n-4o5p6q7r8s9t",
+    "title": "Detect Metasploit SSL Listener (Variant 2)",
+    "description": "Detects Metasploit Framework SSL listeners (Variant 2) via JARM fingerprint.",
+    "author": "aj-tap",
+    "tags": [
+      "shodan",
+      "c2",
+      "jarm",
+      "metasploit"
+    ],
+    "syntax": "from 'shodan' | grep('07d14d16d21d21d07c42d43d000000f50d155305214cf247147c43c0f1a823', this)\n"
+  },
+  {
+    "id": "g6h7i8j9-k0l1-2m3n-4o5p-6q7r8s9t0u1v",
+    "title": "Detect PoshC2 and MacC2",
+    "description": "Detects PoshC2 and MacC2 infrastructure via JARM fingerprint.",
+    "author": "aj-tap",
+    "tags": [
+      "shodan",
+      "c2",
+      "jarm",
+      "poshc2"
+    ],
+    "syntax": "from 'shodan' | grep('2ad2ad0002ad2ad22c42d42d000000faabb8fd156aa8b4d8a37853e1063261', this)\n"
+  },
+  {
+    "id": "c2a1b3c4-d5e6-7f8g-9h0i-1j2k3l4m5n6o",
+    "title": "Detect Python3 Generic C2s (Mythic, Shad0w, GRAT2, SILENTTRINITY)",
+    "description": "Detects generic Python 3 C2 frameworks (Mythic, MacC2 v3.8.2, Shad0w, GRAT2, SILENTTRINITY) using Shodan JARM fingerprints. High potential for false positives as it may match generic Python SSL implementations.",
+    "author": "aj-tap",
+    "tags": [
+      "shodan",
+      "c2",
+      "jarm",
+      "python",
+      "mythic"
+    ],
+    "syntax": "from 'shodan' | grep('2ad2ad0002ad2ad00042d42d000000ad9bf51cc3f5a1e29eecb81d0c7b06eb', this)\n"
+  },
+  {
+    "id": "j9k0l1m2-n3o4-5p6q-7r8s-9t0u1v2w3x4y",
+    "title": "Detect Sliver C2",
+    "description": "Detects Sliver C2 (Go-Lang based) infrastructure via JARM fingerprint.",
+    "author": "aj-tap",
+    "tags": [
+      "shodan",
+      "c2",
+      "jarm",
+      "sliver",
+      "golang"
+    ],
+    "syntax": "from 'shodan' | grep('2ad2ad0002ad2ad00041d2ad2ad41da5207249a18099be84ef3c8811adc883', this)\n"
+  },
+  {
+    "id": "d2e8f1c0-a4b3-4f1e-9d2c-8a1b5c2d3e4f",
+    "title": "Detect Merlin C2",
+    "description": "This rule detects known merlin jarm hashes. go 1.15.2 linux/amd64 with github.com/gorilla/websocket package",
+    "author": "aj-tap",
+    "tags": [
+      "c2",
+      "merlin",
+      "shodan"
+    ],
+    "syntax": "from shodan | grep('2ad2ad0002ad2ad22c42d42d000000faabb8fd156aa8b4d8a37853e1063261',this)| quiet(this)\n"
+  }
+]

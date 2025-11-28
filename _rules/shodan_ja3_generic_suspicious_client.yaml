@@ -1,0 +1,11 @@
+id: o4p5q6r7-s8t9-0u1v-2w3x-4y5z6a7b8c9d
+title: Detect Generic Suspicious TLS Client (PUP, Throwback, Adernhaste)
+description: Detects a generic suspicious JA3 TLS client fingerprint reused by multiple threats including PUPs, SilentBreak Throwback, and Adernhaste.
+author: aj-tap
+tags:
+  - shodan
+  - ja3
+  - suspicious
+  - throwback
+syntax: |
+  from 'shodan' | grep('7dcce5b76c8b17472d024758970a406b', this)

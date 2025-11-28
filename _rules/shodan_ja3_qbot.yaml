@@ -1,0 +1,11 @@
+id: s8t9u0v1-w2x3-4y5z-6a7b-8c9d0e1f2g3h
+title: Detect Qbot
+description: Detects Qbot (Quakbot) malware via JA3 fingerprint.
+author: aj-tap
+tags:
+  - shodan
+  - ja3
+  - qbot
+  - banking-trojan
+syntax: |
+  from 'shodan' | grep('f5e62b5a2ed9467df09fae7a8a54dda6', this)

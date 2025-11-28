@@ -1,0 +1,11 @@
+id: l1m2n3o4-p5q6-7r8s-9t0u-1v2w3x4y5z6a
+title: Detect MacShell and MacShellSwift
+description: Detects MacShell and MacShellSwift variants via JARM fingerprint.
+author: aj-tap
+tags:
+  - shodan
+  - c2
+  - jarm
+  - macshell
+syntax: |
+  from 'shodan' | grep('2ad000000000000000000000000000eeebf944d0b023a00f510f06a29b4f46', this)

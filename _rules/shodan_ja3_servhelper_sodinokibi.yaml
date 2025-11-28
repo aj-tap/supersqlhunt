@@ -1,0 +1,12 @@
+id: r7s8t9u0-v1w2-3x4y-5z6a-7b8c9d0e1f2g
+title: Detect ServHelper and Sodinokibi Ransomware
+description: Detects ServHelper backdoor and Sodinokibi (REvil) ransomware via shared JA3 fingerprint.
+author: aj-tap
+tags:
+  - shodan
+  - ja3
+  - ransomware
+  - revil
+  - servhelper
+syntax: |
+  from 'shodan' | grep('05af1f5ca1b87cc9cc9b25185115607d', this)

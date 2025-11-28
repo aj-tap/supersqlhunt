@@ -1,0 +1,11 @@
+id: f5g6h7i8-j9k0-1l2m-3n4o-5p6q7r8s9t0u
+title: Detect Cobalt Strike (Java 11)
+description: Detects Cobalt Strike Beacon/Listener running on Java 11 via JARM fingerprint.
+author: aj-tap
+tags:
+  - shodan
+  - c2
+  - jarm
+  - cobaltstrike
+syntax: |
+  from 'shodan' | grep('07d14d16d21d21d07c42d41d00041d24a458a375eef0c576d23a7bab9a9fb1', this)

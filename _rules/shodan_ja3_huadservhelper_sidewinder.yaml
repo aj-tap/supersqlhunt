@@ -1,0 +1,11 @@
+id: p5q6r7s8-t9u0-1v2w-3x4y-5z6a7b8c9d0e
+title: Detect HuadServHelper and APT-Sidewinder
+description: Detects HuadServHelper and APT-Sidewinder activity via shared JA3 fingerprint.
+author: aj-tap
+tags:
+  - shodan
+  - ja3
+  - apt
+  - sidewinder
+syntax: |
+  from 'shodan' | grep('1d095e68489d3c535297cd8dffb06cb9', this)

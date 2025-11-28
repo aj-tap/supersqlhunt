@@ -1,0 +1,11 @@
+id: u0v1w2x3-y4z5-6a7b-8c9d-0e1f2g3h4i5j
+title: Detect PowerShell Dropper Script
+description: Detects PowerShell Dropper scripts via JA3 fingerprint.
+author: aj-tap
+tags:
+  - shodan
+  - ja3
+  - dropper
+  - powershell
+syntax: |
+  from 'shodan' | grep('6734f37431670b3ab4292b8f60f29984', this)

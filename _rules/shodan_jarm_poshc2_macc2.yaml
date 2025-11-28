@@ -1,0 +1,11 @@
+id: g6h7i8j9-k0l1-2m3n-4o5p-6q7r8s9t0u1v
+title: Detect PoshC2 and MacC2
+description: Detects PoshC2 and MacC2 infrastructure via JARM fingerprint.
+author: aj-tap
+tags:
+  - shodan
+  - c2
+  - jarm
+  - poshc2
+syntax: |
+  from 'shodan' | grep('2ad2ad0002ad2ad22c42d42d000000faabb8fd156aa8b4d8a37853e1063261', this)

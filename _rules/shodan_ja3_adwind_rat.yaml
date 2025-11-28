@@ -1,0 +1,11 @@
+id: t9u0v1w2-x3y4-5z6a-7b8c-9d0e1f2g3h4i
+title: Detect Adwind RAT
+description: Detects Adwind RAT via JA3 fingerprint.
+author: aj-tap
+tags:
+  - shodan
+  - ja3
+  - rat
+  - adwind
+syntax: |
+  from 'shodan' | grep('2db6873021f2a95daa7de0d93a1d1bf2', this)

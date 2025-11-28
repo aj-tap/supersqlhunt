@@ -1,0 +1,11 @@
+id: w2x3y4z5-a6b7-8c9d-0e1f-2g3h4i5j6k7l
+title: Detect OSTP Backswap
+description: Detects OSTP Backswap malware via JA3 fingerprint.
+author: aj-tap
+tags:
+  - shodan
+  - ja3
+  - backswap
+  - banking-trojan
+syntax: |
+  from 'shodan' | grep('8c4a22651d328568ec66382a84fc505f', this)

@@ -1,0 +1,12 @@
+id: i8j9k0l1-m2n3-4o5p-6q7r-8s9t0u1v2w3x
+title: Detect Deimos C2
+description: Detects Deimos C2 (Go-Lang based) infrastructure via JARM fingerprint.
+author: aj-tap
+tags:
+  - shodan
+  - c2
+  - jarm
+  - deimos
+  - golang
+syntax: |
+  from 'shodan' | grep('00000000000000000041d00000041d9535d5979f591ae8e547c5e5743e5b64', this)

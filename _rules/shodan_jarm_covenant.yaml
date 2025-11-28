@@ -1,0 +1,12 @@
+id: m2n3o4p5-q6r7-8s9t-0u1v-2w3x4y5z6a7b
+title: Detect Covenant C2
+description: Detects Covenant C2 (.NET Core) infrastructure via JARM fingerprint.
+author: aj-tap
+tags:
+  - shodan
+  - c2
+  - jarm
+  - covenant
+  - dotnet
+syntax: |
+  from 'shodan' | grep('21d14d00000000021c21d14d21d21d1ee8ae98bf3ef941e91529a93ac62b8b', this)

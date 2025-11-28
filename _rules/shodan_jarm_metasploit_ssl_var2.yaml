@@ -1,0 +1,11 @@
+id: e4f5g6h7-i8j9-0k1l-2m3n-4o5p6q7r8s9t
+title: Detect Metasploit SSL Listener (Variant 2)
+description: Detects Metasploit Framework SSL listeners (Variant 2) via JARM fingerprint.
+author: aj-tap
+tags:
+  - shodan
+  - c2
+  - jarm
+  - metasploit
+syntax: |
+  from 'shodan' | grep('07d14d16d21d21d07c42d43d000000f50d155305214cf247147c43c0f1a823', this)

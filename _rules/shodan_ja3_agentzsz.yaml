@@ -1,0 +1,10 @@
+id: y4z5a6b7-c8d9-0e1f-2g3h-4i5j6k7l8m9n
+title: Detect AgentZSZ-nexgen
+description: Detects AgentZSZ-nexgen malware via JA3 fingerprint.
+author: aj-tap
+tags:
+  - shodan
+  - ja3
+  - agentzsz
+syntax: |
+  from 'shodan' | grep('422b752378bb490ddc436b9be9527ac0', this)

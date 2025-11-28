@@ -1,0 +1,12 @@
+id: j9k0l1m2-n3o4-5p6q-7r8s-9t0u1v2w3x4y
+title: Detect Sliver C2
+description: Detects Sliver C2 (Go-Lang based) infrastructure via JARM fingerprint.
+author: aj-tap
+tags:
+  - shodan
+  - c2
+  - jarm
+  - sliver
+  - golang
+syntax: |
+  from 'shodan' | grep('2ad2ad0002ad2ad00041d2ad2ad41da5207249a18099be84ef3c8811adc883', this)

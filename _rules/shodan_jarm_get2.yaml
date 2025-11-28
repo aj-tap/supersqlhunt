@@ -1,0 +1,11 @@
+id: n3o4p5q6-r7s8-9t0u-1v2w-3x4y5z6a7b8c
+title: Detect Get2 C2
+description: Detects Get2 C2 infrastructure via JARM fingerprint.
+author: aj-tap
+tags:
+  - shodan
+  - c2
+  - jarm
+  - get2
+syntax: |
+  from 'shodan' | grep('07d19d12d21d21d07c07d19d07d21da5a8ab90bcc6bf8bbc6fbec4bcaa8219', this)
