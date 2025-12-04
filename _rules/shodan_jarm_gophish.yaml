@@ -1,0 +1,12 @@
+id: 7a37ee60-cd48-4fa4-958f-59835ec33d33
+title: Detect Gophish JARM
+description: Detects Gophish infrastructure via JARM fingerprint.
+author: "none"
+tags:
+  - intelops
+  - shodan
+  - phishing
+  - jarm
+  - gophish
+syntax: |
+  from 'shodan' | grep('28d28d28d00028d00041d28d28d41dd279b0cf765af27fa62e66d7c8281124', this) | quiet(this)

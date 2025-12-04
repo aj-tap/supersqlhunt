@@ -1,0 +1,12 @@
+id: b4eb7e62-36b6-4091-943e-648f73e814b2
+title: Detect Open Directory Filename Cobalt Strike
+description: Detects exposed Cobalt Strike files within open directories.
+author: "none"
+tags:
+  - intelops
+  - shodan
+  - infrastructure
+  - opendirectory
+  - cobaltstrike
+syntax: |
+  from 'shodan' | grep('Cobalt Strike', this) | quiet(this)

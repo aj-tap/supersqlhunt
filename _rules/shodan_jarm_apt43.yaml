@@ -1,0 +1,14 @@
+id: f60fc09c-28bc-407d-974b-f22d9c81e46e
+title: Detect APT43 JARM (Port 443)
+description: Detects APT43 infrastructure on port 443 via JARM fingerprint.
+author: "none"
+tags:
+  - intelops
+  - shodan
+  - c2
+  - jarm
+  - apt
+  - apt43
+  - kimsuky
+syntax: |
+  from 'shodan' | grep('2ad2ad16d2ad2ad22c42d42d0000006f254909a73bf62f6b28507e9fb451b5', this) | quiet(this)

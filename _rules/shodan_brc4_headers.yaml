@@ -1,0 +1,11 @@
+id: 997e24fb-ac9c-4197-8ffb-cd54630dcc30
+title: Detect Brute Ratel C4 (BRC4) Headers
+description: Detects common HTTP response attributes observed in BRC4 C2s, particularly the content length and type combination.
+author: "none"
+tags:
+  - intelops
+  - shodan
+  - c2
+  - brc4
+syntax: |
+  from 'shodan' | grep('Content-Length: 14', this) | grep('charset=utf-8', this) |  quiet(this)

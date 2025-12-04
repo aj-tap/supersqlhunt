@@ -1,0 +1,12 @@
+id: 3b0458ad-d5d7-453f-8539-6f041deddbff
+title: Detect Open Directory File .dll
+description: Detects exposed directories containing the malicious file extension '.dll'.
+author: "none"
+tags:
+  - intelops
+  - shodan
+  - infrastructure
+  - opendirectory
+  - malware
+syntax: |
+  from 'shodan' | grep('.dll', this) | quiet(this)

@@ -1,0 +1,13 @@
+id: 883a11f1-52ed-4958-b4da-b26e73c7f5f8
+title: Detect Lazarus (BeaverTail) FTP Banner
+description: Detects Lazarus Group (BeaverTail) C2 pivot points using the specific FTP service banner.
+author: "none"
+tags:
+  - intelops
+  - shodan
+  - c2
+  - lazarus
+  - beavertail
+  - ftp
+syntax: |
+  from 'shodan' | grep('220 pyftpdlib based ftpd ready', this) | quiet(this)

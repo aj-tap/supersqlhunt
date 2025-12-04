@@ -1,0 +1,13 @@
+id: 24b2cea9-172f-4471-a451-7b55d30720c8
+title: Detect Scattered Spider JS Hash
+description: Detects Scattered Spider phishing infrastructure using the SHA-256 hash found within the okta-sign-in.min.js JavaScript code.
+author: "none"
+tags:
+  - intelops
+  - shodan
+  - apt
+  - scatteredspider
+  - phishing
+  - hash
+syntax: |
+  from 'shodan' | grep('0acb0fc9762e4359f562794011d77317c78f7b68cec08b715d98ed16ba761fac', this) | quiet(this)

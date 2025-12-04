@@ -1,0 +1,13 @@
+id: 812c087a-c2d2-4e31-9a22-bc6e36af3a24
+title: Detect CS Malleable (Windows Update Profile)
+description: Detects Cobalt Strike infrastructure using the Windows Update Malleable Profile by searching for unique strings and the "404 not found" string in SSL certificate fields.
+author: "none"
+tags:
+  - intelops
+  - shodan
+  - evasion
+  - malleable
+  - cobaltstrike
+  - certificate
+syntax: |
+  from 'shodan' | grep('windowsupdate.com', this) | quiet(this)

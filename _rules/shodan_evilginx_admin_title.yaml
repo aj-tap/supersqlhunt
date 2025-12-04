@@ -1,0 +1,11 @@
+id: 934ad5b1-0e7a-4517-9f2b-580ccfdf08e7
+title: Detect Evilginx Admin Login Title
+description: Detects Evilginx phishing framework admin panel using the title string 'EvilginxLogin'.
+author: "none"
+tags:
+  - intelops
+  - shodan
+  - phishing
+  - evilginx
+syntax: |
+  from 'shodan' | grep('EvilginxLogin', this) | quiet(this)

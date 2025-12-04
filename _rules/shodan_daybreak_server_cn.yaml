@@ -1,0 +1,13 @@
+id: 144719aa-0716-4c1f-a85b-b81a32fab492
+title: Detect DayBreak (BAS) Server Cert CN
+description: Detects DayBreak C2 using the default server certificate common name issuer.common_name=bas-server
+author: "none"
+tags:
+  - intelops
+  - shodan
+  - c2
+  - bas
+  - daybreak
+  - certificate
+syntax: |
+  from 'shodan' | grep('bas-server', this) | quiet(this)

@@ -1,0 +1,12 @@
+id: 44dae159-b715-4fe9-8665-8b28a1540cec
+title: Detect Open Directory Related Term fud.exe
+description: Detects files related to 'Fully Undetectable' (FUD) malware within open directories.
+author: "none"
+tags:
+  - intelops
+  - shodan
+  - infrastructure
+  - opendirectory
+  - malware
+syntax: |
+  from 'shodan' | grep('fud.exe', this) | quiet(this)

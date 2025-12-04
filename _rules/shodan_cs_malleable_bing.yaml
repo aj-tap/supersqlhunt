@@ -1,0 +1,13 @@
+id: b9ea93b3-add5-4c8b-b501-604b301fa1f9
+title: Detect CS Malleable (Bing Profile)
+description: Detects Cobalt Strike infrastructure using the Bing Malleable Profile by searching for unique strings in SSL certificate fields.
+author: "none"
+tags:
+  - intelops
+  - shodan
+  - evasion
+  - malleable
+  - cobaltstrike
+  - certificate
+syntax: |
+  from 'shodan' | grep('ssl:bing.com', this) | quiet(this)

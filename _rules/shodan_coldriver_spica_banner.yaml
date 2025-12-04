@@ -1,0 +1,13 @@
+id: aa5bda8c-2297-43b9-b720-487f09bc2d9f
+title: Detect COLDRIVER (SPICA) Port 3000 Banner
+description: Detects COLDRIVER (SPICA) C2 infrastructure using the specific banner response string observed on port 3000.
+author: "none"
+tags:
+  - intelops
+  - shodan
+  - c2
+  - coldriver
+  - spica
+  - banner
+syntax: |
+  from 'shodan' | grep('\x15\x03\x03\x00\x02\x02', this) | quiet(this)

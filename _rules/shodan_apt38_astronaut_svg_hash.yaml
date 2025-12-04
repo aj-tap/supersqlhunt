@@ -1,0 +1,13 @@
+id: 45f7e53c-df47-40d7-9700-3fefd38765a3
+title: Detect APT38 astronaut.svg Hash
+description: Detects APT38/Bluenoroff infrastructure using the unique hash for the 'astronaut.svg' image component.
+author: "none"
+tags:
+  - intelops
+  - shodan
+  - apt
+  - apt38
+  - bluenoroff
+  - hash
+syntax: |
+  from 'shodan' | grep('2c810eaa80d3ad8de67e01646b74ff2eebc945a8869d67c17088d277a27a461e', this) | quiet(this)

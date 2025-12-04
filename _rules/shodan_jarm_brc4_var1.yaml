@@ -1,0 +1,12 @@
+id: 04b7f863-effa-4813-9851-9d31c04cf75c
+title: Detect Brute Ratel C4 (BRC4) JARM 1
+description: Detects Brute Ratel C4 C2 infrastructure via JARM fingerprint (Example 1).
+author: "none"
+tags:
+  - intelops
+  - shodan
+  - c2
+  - jarm
+  - brc4
+syntax: |
+  from 'shodan' | grep('3fd21b20d00000021c43d21b21b43d76e1f79b8645e08ae7fa8f07eb5e4202', this) | quiet(this)

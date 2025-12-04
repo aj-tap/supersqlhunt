@@ -1,0 +1,11 @@
+id: 62c0776d-4e9d-4183-b01e-50247a509e43
+title: Detect Open Directories (Apache/Nginx)
+description: Detects Apache/Nginx open directories using the common title string.
+author: "none"
+tags:
+  - intelops
+  - shodan
+  - infrastructure
+  - opendirectory
+syntax: |
+  from 'shodan' | grep('Index of ', this) | quiet(this)

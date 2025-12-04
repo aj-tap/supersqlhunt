@@ -1,0 +1,13 @@
+id: 3a4b76ba-59fa-45ae-a552-5c79503a49dc
+title: Detect APT43/Kimsuky Cert Size (3072-bit)
+description: Detects APT43/Kimsuky infrastructure using the certificate attribute indicating a 3072-bit public key size.
+author: "none"
+tags:
+  - intelops
+  - shodan
+  - apt
+  - apt43
+  - kimsuky
+  - certificate
+syntax: |
+  from 'shodan' | grep('ssl:3072', this) | quiet(this)

@@ -1,0 +1,12 @@
+id: 7e7f6f98-a888-4543-92f8-45839103c455
+title: Detect Manjusaka C2 FOFA Body Hash
+description: Detects Manjusaka C2 configurations using the associated FOFA body hash.
+author: "none"
+tags:
+  - intelops
+  - fofa
+  - c2
+  - manjusaka
+  - hash
+syntax: |
+  from 'fofa' | grep('body_hash="94023120"', this) | quiet(this)

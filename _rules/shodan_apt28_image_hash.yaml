@@ -1,0 +1,13 @@
+id: 98fa050d-f51b-418e-bc19-70eab0650417
+title: Detect APT28 Reused Image Hash
+description: Detects APT28/Fancy Bear infrastructure pivot points using the SHA-256 hash of a reused image (Capture2.png).
+author: "none"
+tags:
+  - intelops
+  - shodan
+  - apt
+  - apt28
+  - fancybear
+  - hash
+syntax: |
+  from 'shodan' | grep('0b5b388c8edfeb4bf0efd7ba1873ec9f2fc611d78a6c59e93eec52131bd20a88', this) | quiet(this)

@@ -1,0 +1,13 @@
+id: a6f8f9ba-3bb0-45ed-8f9f-3d4f3656ab38
+title: Detect COLDRIVER (SPICA) JARM (Zeros)
+description: Detects SPICA Backdoor C2 infrastructure using an all-zeros SSL JARM fingerprint.
+author: "none"
+tags:
+  - intelops
+  - shodan
+  - c2
+  - jarm
+  - coldriver
+  - spica
+syntax: |
+  from 'shodan' | grep('00000000000000000000000000000000000000000000000000000000000000', this) | quiet(this)

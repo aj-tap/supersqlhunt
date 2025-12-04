@@ -1,0 +1,11 @@
+id: c1dfa7b7-4a8f-48ed-813b-5e3f6420bfcd
+title: Detect Responder Deprecated Date String
+description: Detects deprecated versions of Responder using a hardcoded date string found in the banner.
+author: "none"
+tags:
+  - intelops
+  - shodan
+  - tool
+  - responder
+syntax: |
+  from 'shodan' | grep('Date: Wed, 12 Sep 2012 13:06:55 GMT', this) | quiet(this)

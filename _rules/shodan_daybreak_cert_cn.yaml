@@ -1,0 +1,13 @@
+id: 51a0f4d0-fc51-47fe-985e-ff24c9803f7b
+title: Detect DayBreak (BAS) Listener CN
+description: Detects the certificate Common Name (CN) for the DayBreak listener CN=bas-listener.
+author: "none"
+tags:
+  - intelops
+  - shodan
+  - c2
+  - bas
+  - daybreak
+  - certificate
+syntax: |
+  from 'shodan' | grep('bas-listener', this) | quiet(this)

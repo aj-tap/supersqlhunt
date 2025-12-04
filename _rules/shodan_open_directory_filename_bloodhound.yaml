@@ -1,0 +1,12 @@
+id: 945dc4a7-4545-4ae4-8368-b428b2dfb8ec
+title: Detect Open Directory Filename bloodhound
+description: Detects exposed Bloodhound reconnaissance tool files within open directories.
+author: "none"
+tags:
+  - intelops
+  - shodan
+  - infrastructure
+  - opendirectory
+  - tool
+syntax: |
+  from 'shodan' | grep('bloodhound', this) | quiet(this)

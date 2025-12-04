@@ -1,0 +1,13 @@
+id: ebce4dc1-4f09-4ae3-9ed7-22be06878f8f
+title: Detect Cobalt Strike JARM (Cloudflare)
+description: Detects Cobalt Strike infrastructure behind Cloudflare via JARM fingerprint.
+author: "none"
+tags:
+  - intelops
+  - shodan
+  - c2
+  - jarm
+  - cobaltstrike
+  - cloudflare
+syntax: |
+  from 'shodan' | grep('2ad2ad16d2ad2ad00042d42d00042ddb04deffa1705e2edc44cae1ed24a4da', this) | quiet(this)

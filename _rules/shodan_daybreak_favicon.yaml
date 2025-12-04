@@ -1,0 +1,13 @@
+id: 95c34c02-be88-4578-9f17-97d8081387cc
+title: Detect DayBreak (BAS) Favicon Hash
+description: Detects the exposed DayBreak admin panel using its favicon hash.
+author: "none"
+tags:
+  - intelops
+  - shodan
+  - c2
+  - bas
+  - daybreak
+  - favicon
+syntax: |
+  from 'shodan' | grep('991353327', this) | quiet(this)

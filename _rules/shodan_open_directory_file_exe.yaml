@@ -1,0 +1,12 @@
+id: a3f04ff3-1288-44cc-a8d5-67c8118cc02b
+title: Detect Open Directory File .exe
+description: Detects exposed directories containing the malicious file extension '.exe'.
+author: "none"
+tags:
+  - intelops
+  - shodan
+  - infrastructure
+  - opendirectory
+  - malware
+syntax: |
+  from 'shodan' | grep('.exe', this) | quiet(this)

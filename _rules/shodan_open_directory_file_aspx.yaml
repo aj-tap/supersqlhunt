@@ -1,0 +1,12 @@
+id: 4e7b5a31-4806-4966-b9d3-953f73a38629
+title: Detect Open Directory File .aspx
+description: Detects exposed directories containing the file extension '.aspx', often indicating web shells or command execution endpoints.
+author: "none"
+tags:
+  - intelops
+  - shodan
+  - infrastructure
+  - opendirectory
+  - webshell
+syntax: |
+  from 'shodan' | grep('.aspx', this) | quiet(this)

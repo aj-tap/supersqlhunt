@@ -1,0 +1,12 @@
+id: 7ee339ff-5ec8-4d57-aa28-8a3cfd38808c
+title: Detect Cobalt Strike Watermark
+description: Detects the common watermark attribute (987654321) identified on CS beacons, specifically those linked to LockBit affiliates.
+author: "none"
+tags:
+  - intelops
+  - shodan
+  - c2
+  - cobaltstrike
+  - lockbit
+syntax: |
+  from 'shodan' | grep('watermark: 987654321', this) | quiet(this)

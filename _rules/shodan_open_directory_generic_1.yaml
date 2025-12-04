@@ -1,0 +1,11 @@
+id: ab902b52-b841-4b3d-980f-865ef8080f6d
+title: Detect Open Directory (Directory /)
+description: Detects generic open directories using the alternate title string Directory
+author: "none"
+tags:
+  - intelops
+  - shodan
+  - infrastructure
+  - opendirectory
+syntax: |
+  from 'shodan' | grep('Directory: /', this) | quiet(this)

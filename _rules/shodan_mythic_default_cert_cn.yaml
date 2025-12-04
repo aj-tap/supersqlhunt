@@ -1,0 +1,12 @@
+id: aab2a7a6-09ea-4923-8802-8a8e5d685dd0
+title: Detect Mythic C2 Default CN
+description: Detects the default certificate Common Name (CN) for the Mythic C2 framework.
+author: "none"
+tags:
+  - intelops
+  - shodan
+  - c2
+  - mythic
+  - certificate
+syntax: |
+  from 'shodan' | grep('ssl:Mythic', this) | quiet(this)

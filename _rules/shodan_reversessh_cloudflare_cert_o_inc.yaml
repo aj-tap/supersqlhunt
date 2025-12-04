@@ -1,0 +1,13 @@
+id: deea681a-53ad-475b-81ad-e9f40abfd043
+title: Detect ReverseSSH (Cloudflare, Inc. Cert)
+description: Detects ReverseSSH infrastructure using the specific Cloudflare certificate organization string 'Cloudflare, Inc'.
+author: "none"
+tags:
+  - intelops
+  - shodan
+  - infrastructure
+  - reversessh
+  - cloudflare
+  - certificate
+syntax: |
+  from 'shodan' | grep('Cloudflare\\x5C, Inc', this) | quiet(this)

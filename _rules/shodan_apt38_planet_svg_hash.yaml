@@ -1,0 +1,13 @@
+id: f01094ae-0e20-4592-9daa-10308a7a0df2
+title: Detect APT38 planet.svg Hash
+description: Detects APT38/Bluenoroff infrastructure using the unique hash for the 'planet.svg' image component.
+author: "none"
+tags:
+  - intelops
+  - shodan
+  - apt
+  - apt38
+  - bluenoroff
+  - hash
+syntax: |
+  from 'shodan' | grep('2569d40b79d2172b54573e5dd72851b6ddcddedc7cc13f5fd71eb803aa6af3b5', this) | quiet(this)

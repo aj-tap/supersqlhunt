@@ -1,0 +1,13 @@
+id: de1e750a-e2a6-4154-bcfe-a2e1529c8183
+title: Detect APT38 404.css Hash
+description: Detects APT38/Bluenoroff infrastructure using the unique hash for the '404.css' file component.
+author: "none"
+tags:
+  - intelops
+  - shodan
+  - apt
+  - apt38
+  - bluenoroff
+  - hash
+syntax: |
+  from 'shodan' | grep('6d6cc5f6cf072f1a1d1db2a369ce38d58f922307383ac5e253a7881587c27c20', this) | quiet(this)

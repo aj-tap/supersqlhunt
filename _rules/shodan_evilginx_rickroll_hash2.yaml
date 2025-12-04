@@ -1,0 +1,12 @@
+id: 089b17ff-561e-450b-9dc2-e8bf2012ab09
+title: Detect Evilginx Rickroll Image Hash 2
+description: Detects Evilginx infrastructure using a SHA-256 hash of a Rick Astley redirection image (Example 2).
+author: "none"
+tags:
+  - intelops
+  - shodan
+  - phishing
+  - evilginx
+  - hash
+syntax: |
+  from 'shodan' | grep('2fc77b4a0620f5dca2d3cae6d917af3acdeb3b2e5558ba1727f8d651351fc692', this) | quiet(this)

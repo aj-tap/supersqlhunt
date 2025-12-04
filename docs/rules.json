@@ -35,8 +35,7 @@
       "cobaltstrike",
       "shodan"
     ],
-    "syntax": "from shodan | grep('29d21b20d29d29d21c41d21b21b41d494e0df9532e75299f15ba73156cee38',this) | quiet(this)\n",
-    "source": "internetstormcast"
+    "syntax": "from shodan | grep('29d21b20d29d29d21c41d21b21b41d494e0df9532e75299f15ba73156cee38',this) | quiet(this)"
   },
   {
     "id": "t9u0v1w2-x3y4-5z6a-7b8c-9d0e1f2g3h4i",
@@ -352,5 +351,820 @@
       "shodan"
     ],
     "syntax": "from shodan | grep('2ad2ad0002ad2ad22c42d42d000000faabb8fd156aa8b4d8a37853e1063261',this)| quiet(this)\n"
+  },
+  {
+    "id": "ebce4dc1-4f09-4ae3-9ed7-22be06878f8f",
+    "title": "Detect Cobalt Strike JARM (Cloudflare)",
+    "description": "Detects Cobalt Strike infrastructure behind Cloudflare via JARM fingerprint.",
+    "author": "none",
+    "tags": [
+      "intelops",
+      "shodan",
+      "c2",
+      "jarm",
+      "cobaltstrike",
+      "cloudflare"
+    ],
+    "syntax": "from 'shodan' | grep('2ad2ad16d2ad2ad00042d42d00042ddb04deffa1705e2edc44cae1ed24a4da', this) | quiet(this)\n"
+  },
+  {
+    "id": "7ee339ff-5ec8-4d57-aa28-8a3cfd38808c",
+    "title": "Detect Cobalt Strike Watermark",
+    "description": "Detects the common watermark attribute (987654321) identified on CS beacons, specifically those linked to LockBit affiliates.",
+    "author": "none",
+    "tags": [
+      "intelops",
+      "shodan",
+      "c2",
+      "cobaltstrike",
+      "lockbit"
+    ],
+    "syntax": "from 'shodan' | grep('watermark: 987654321', this) | quiet(this)\n"
+  },
+  {
+    "id": "f4b52437-8a48-4fed-a31a-bf89e6275961",
+    "title": "Detect Cobalt Strike Default Certificate CN",
+    "description": "Detects the default subject Common Name (CN) found in CS default certificates CN=Major Cobalt Strike.",
+    "author": "none",
+    "tags": [
+      "intelops",
+      "shodan",
+      "c2",
+      "cobaltstrike",
+      "certificate"
+    ],
+    "syntax": "from 'shodan' | grep('Major Cobalt Strike', this) | quiet(this)\n"
+  },
+  {
+    "id": "75b4d112-846b-4bf7-8122-f6cb49e216cf",
+    "title": "Detect Cobalt Strike Pwn3rs Striked CN",
+    "description": "Detects the custom certificate CN from a cracked Cobalt Strike version (Pwn3rs Striked).",
+    "author": "none",
+    "tags": [
+      "intelops",
+      "shodan",
+      "c2",
+      "cobaltstrike",
+      "certificate"
+    ],
+    "syntax": "from 'shodan' | grep('Pwn3rs Striked', this) | quiet(this)\n"
+  },
+  {
+    "id": "997e24fb-ac9c-4197-8ffb-cd54630dcc30",
+    "title": "Detect Brute Ratel C4 (BRC4) Headers",
+    "description": "Detects common HTTP response attributes observed in BRC4 C2s, particularly the content length and type combination.",
+    "author": "none",
+    "tags": [
+      "intelops",
+      "shodan",
+      "c2",
+      "brc4"
+    ],
+    "syntax": "from 'shodan' | grep('Content-Length: 14', this) | grep('charset=utf-8', this) |  quiet(this)\n"
+  },
+  {
+    "id": "04b7f863-effa-4813-9851-9d31c04cf75c",
+    "title": "Detect Brute Ratel C4 (BRC4) JARM 1",
+    "description": "Detects Brute Ratel C4 C2 infrastructure via JARM fingerprint (Example 1).",
+    "author": "none",
+    "tags": [
+      "intelops",
+      "shodan",
+      "c2",
+      "jarm",
+      "brc4"
+    ],
+    "syntax": "from 'shodan' | grep('3fd21b20d00000021c43d21b21b43d76e1f79b8645e08ae7fa8f07eb5e4202', this) | quiet(this)\n"
+  },
+  {
+    "id": "aab2a7a6-09ea-4923-8802-8a8e5d685dd0",
+    "title": "Detect Mythic C2 Default CN",
+    "description": "Detects the default certificate Common Name (CN) for the Mythic C2 framework.",
+    "author": "none",
+    "tags": [
+      "intelops",
+      "shodan",
+      "c2",
+      "mythic",
+      "certificate"
+    ],
+    "syntax": "from 'shodan' | grep('ssl:Mythic', this) | quiet(this)\n"
+  },
+  {
+    "id": "e1b5eee2-0207-4cbd-bbbf-5396c9230d4d",
+    "title": "Detect Mythic C2 Favicon Hash",
+    "description": "Detects Mythic C2 instances using the associated favicon hash.",
+    "author": "none",
+    "tags": [
+      "intelops",
+      "shodan",
+      "c2",
+      "mythic",
+      "favicon"
+    ],
+    "syntax": "from 'shodan' | grep('http.favicon.hash:-859291042', this) | quiet(this)\n"
+  },
+  {
+    "id": "73e322e8-bf72-4e5b-9172-0a3fcc149a17",
+    "title": "Detect Havoc C2 HTTP Header",
+    "description": "Detects Havoc C2 instances using the hardcoded 'x-havoc true' HTTP header string.",
+    "author": "none",
+    "tags": [
+      "intelops",
+      "shodan",
+      "c2",
+      "havoc"
+    ],
+    "syntax": "from 'shodan' | grep('x-havoc: true', this) | quiet(this)\n"
+  },
+  {
+    "id": "c592b886-afc6-4005-895b-0fa4baece838",
+    "title": "Detect Havoc C2 JARM",
+    "description": "Detects Havoc C2 infrastructure via JARM fingerprint.",
+    "author": "none",
+    "tags": [
+      "intelops",
+      "shodan",
+      "c2",
+      "jarm",
+      "havoc"
+    ],
+    "syntax": "from 'shodan' | grep('3fd21b20d00000021c43d21b21b43de0a012c76cf078b8d06f4620c2286f5e', this) | quiet(this)\n"
+  },
+  {
+    "id": "c6c11286-b6d9-494d-8024-9154609a4327",
+    "title": "Detect Sliver C2 JARM",
+    "description": "Detects Sliver C2 infrastructure via JARM fingerprint.",
+    "author": "none",
+    "tags": [
+      "intelops",
+      "shodan",
+      "c2",
+      "jarm",
+      "sliver"
+    ],
+    "syntax": "from 'shodan' | grep('3fd21b20d00000021c43d21b21b43d41226dd5dfc615dd4a96265559485910', this) | quiet(this)\n"
+  },
+  {
+    "id": "5363247a-af24-4abb-b15e-c2762e7a520e",
+    "title": "Detect Sliver C2 Certificate O=mad",
+    "description": "Detects Sliver C2 using custom certificates generated by the 'mad' tool via the organization string.",
+    "author": "none",
+    "tags": [
+      "intelops",
+      "shodan",
+      "c2",
+      "sliver",
+      "certificate"
+    ],
+    "syntax": "from 'shodan' | grep('github.com/txthinking/mad', this) | quiet(this)\n"
+  },
+  {
+    "id": "ba04d0e5-246c-488c-b4fa-29a3eebebbb3",
+    "title": "Detect Manjusaka C2 HTTP Redirect",
+    "description": "Detects Manjusaka C2 infrastructure using the default clear text HTTP redirection destination.",
+    "author": "none",
+    "tags": [
+      "intelops",
+      "shodan",
+      "c2",
+      "manjusaka",
+      "redirection"
+    ],
+    "syntax": "from 'shodan' | grep('Location: http://www.microsoft.com', this) | quiet(this)\n"
+  },
+  {
+    "id": "7e7f6f98-a888-4543-92f8-45839103c455",
+    "title": "Detect Manjusaka C2 FOFA Body Hash",
+    "description": "Detects Manjusaka C2 configurations using the associated FOFA body hash.",
+    "author": "none",
+    "tags": [
+      "intelops",
+      "fofa",
+      "c2",
+      "manjusaka",
+      "hash"
+    ],
+    "syntax": "from 'fofa' | grep('body_hash=\"94023120\"', this) | quiet(this)\n"
+  },
+  {
+    "id": "51a0f4d0-fc51-47fe-985e-ff24c9803f7b",
+    "title": "Detect DayBreak (BAS) Listener CN",
+    "description": "Detects the certificate Common Name (CN) for the DayBreak listener CN=bas-listener.",
+    "author": "none",
+    "tags": [
+      "intelops",
+      "shodan",
+      "c2",
+      "bas",
+      "daybreak",
+      "certificate"
+    ],
+    "syntax": "from 'shodan' | grep('bas-listener', this) | quiet(this)\n"
+  },
+  {
+    "id": "95c34c02-be88-4578-9f17-97d8081387cc",
+    "title": "Detect DayBreak (BAS) Favicon Hash",
+    "description": "Detects the exposed DayBreak admin panel using its favicon hash.",
+    "author": "none",
+    "tags": [
+      "intelops",
+      "shodan",
+      "c2",
+      "bas",
+      "daybreak",
+      "favicon"
+    ],
+    "syntax": "from 'shodan' | grep('991353327', this) | quiet(this)\n"
+  },
+  {
+    "id": "ff47b73c-26a8-4e19-b842-df71d586bbe3",
+    "title": "Detect Gophish Login Page Title",
+    "description": "Detects Gophish phishing panels using the default login page title.",
+    "author": "none",
+    "tags": [
+      "intelops",
+      "shodan",
+      "phishing",
+      "gophish"
+    ],
+    "syntax": "from 'shodan' | grep('Gophish - Login', this) | quiet(this)\n"
+  },
+  {
+    "id": "7a37ee60-cd48-4fa4-958f-59835ec33d33",
+    "title": "Detect Gophish JARM",
+    "description": "Detects Gophish infrastructure via JARM fingerprint.",
+    "author": "none",
+    "tags": [
+      "intelops",
+      "shodan",
+      "phishing",
+      "jarm",
+      "gophish"
+    ],
+    "syntax": "from 'shodan' | grep('28d28d28d00028d00041d28d28d41dd279b0cf765af27fa62e66d7c8281124', this) | quiet(this)\n"
+  },
+  {
+    "id": "ed623793-262e-449b-8e50-060af08fcdc5",
+    "title": "Detect Pikabot C2 JARM",
+    "description": "Detects Pikabot C2 servers using randomized certificates via JARM fingerprint.",
+    "author": "none",
+    "tags": [
+      "intelops",
+      "shodan",
+      "c2",
+      "jarm",
+      "pikabot"
+    ],
+    "syntax": "from 'shodan' | grep('21d19d00021d21d21c21d19d21d21dd188f9fdeea4d1b361be3a6ec494b2d2', this) | quiet(this)\n"
+  },
+  {
+    "id": "a6f8f9ba-3bb0-45ed-8f9f-3d4f3656ab38",
+    "title": "Detect COLDRIVER (SPICA) JARM (Zeros)",
+    "description": "Detects SPICA Backdoor C2 infrastructure using an all-zeros SSL JARM fingerprint.",
+    "author": "none",
+    "tags": [
+      "intelops",
+      "shodan",
+      "c2",
+      "jarm",
+      "coldriver",
+      "spica"
+    ],
+    "syntax": "from 'shodan' | grep('00000000000000000000000000000000000000000000000000000000000000', this) | quiet(this)\n"
+  },
+  {
+    "id": "635f0946-7fee-4f37-aea3-ca47b1372f2a",
+    "title": "Detect COLDRIVER (SPICA) Certificate CN",
+    "description": "Detects SPICA Backdoor C2s using the SSL Certificate common name 'Internet Widgits Pty Ltd'.",
+    "author": "none",
+    "tags": [
+      "intelops",
+      "shodan",
+      "c2",
+      "coldriver",
+      "spica",
+      "certificate"
+    ],
+    "syntax": "from 'shodan' | grep('Internet Widgits Pty Ltd', this) | quiet(this)\n"
+  },
+  {
+    "id": "41b02882-65da-4c25-84c9-313f5f018f57",
+    "title": "Detect Rhysida PortStarter Headers",
+    "description": "Detects Rhysida (PortStarter) C2 using the unique combination of HTTP Server header and Www-Authenticate field.",
+    "author": "none",
+    "tags": [
+      "intelops",
+      "shodan",
+      "c2",
+      "ransomware",
+      "rhysida",
+      "portstarter"
+    ],
+    "syntax": "from 'shodan' | grep('Server: BaseHTTP/0.6 Python/3.8.10 Www-Authenticate: Basic realm=Demo Realm', this) | quiet(this)\n"
+  },
+  {
+    "id": "883a11f1-52ed-4958-b4da-b26e73c7f5f8",
+    "title": "Detect Lazarus (BeaverTail) FTP Banner",
+    "description": "Detects Lazarus Group (BeaverTail) C2 pivot points using the specific FTP service banner.",
+    "author": "none",
+    "tags": [
+      "intelops",
+      "shodan",
+      "c2",
+      "lazarus",
+      "beavertail",
+      "ftp"
+    ],
+    "syntax": "from 'shodan' | grep('220 pyftpdlib based ftpd ready', this) | quiet(this)\n"
+  },
+  {
+    "id": "f60fc09c-28bc-407d-974b-f22d9c81e46e",
+    "title": "Detect APT43 JARM (Port 443)",
+    "description": "Detects APT43 infrastructure on port 443 via JARM fingerprint.",
+    "author": "none",
+    "tags": [
+      "intelops",
+      "shodan",
+      "c2",
+      "jarm",
+      "apt",
+      "apt43",
+      "kimsuky"
+    ],
+    "syntax": "from 'shodan' | grep('2ad2ad16d2ad2ad22c42d42d0000006f254909a73bf62f6b28507e9fb451b5', this) | quiet(this)\n"
+  },
+  {
+    "id": "9d23afb1-b1a0-4e5c-a93d-1293cefcfbf5",
+    "title": "Detect APT38 RDP Certificate CN",
+    "description": "Detects APT38/Bluenoroff infrastructure using the RDP certificate subject Common Name (CN).",
+    "author": "none",
+    "tags": [
+      "intelops",
+      "shodan",
+      "apt",
+      "apt38",
+      "bluenoroff",
+      "rdp",
+      "certificate"
+    ],
+    "syntax": "from 'shodan' | grep('hwc-hwp-7779700', this) | quiet(this)\n"
+  },
+  {
+    "id": "98fa050d-f51b-418e-bc19-70eab0650417",
+    "title": "Detect APT28 Reused Image Hash",
+    "description": "Detects APT28/Fancy Bear infrastructure pivot points using the SHA-256 hash of a reused image (Capture2.png).",
+    "author": "none",
+    "tags": [
+      "intelops",
+      "shodan",
+      "apt",
+      "apt28",
+      "fancybear",
+      "hash"
+    ],
+    "syntax": "from 'shodan' | grep('0b5b388c8edfeb4bf0efd7ba1873ec9f2fc611d78a6c59e93eec52131bd20a88', this) | quiet(this)\n"
+  },
+  {
+    "id": "24b2cea9-172f-4471-a451-7b55d30720c8",
+    "title": "Detect Scattered Spider JS Hash",
+    "description": "Detects Scattered Spider phishing infrastructure using the SHA-256 hash found within the okta-sign-in.min.js JavaScript code.",
+    "author": "none",
+    "tags": [
+      "intelops",
+      "shodan",
+      "apt",
+      "scatteredspider",
+      "phishing",
+      "hash"
+    ],
+    "syntax": "from 'shodan' | grep('0acb0fc9762e4359f562794011d77317c78f7b68cec08b715d98ed16ba761fac', this) | quiet(this)\n"
+  },
+  {
+    "id": "b9ea93b3-add5-4c8b-b501-604b301fa1f9",
+    "title": "Detect CS Malleable (Bing Profile)",
+    "description": "Detects Cobalt Strike infrastructure using the Bing Malleable Profile by searching for unique strings in SSL certificate fields.",
+    "author": "none",
+    "tags": [
+      "intelops",
+      "shodan",
+      "evasion",
+      "malleable",
+      "cobaltstrike",
+      "certificate"
+    ],
+    "syntax": "from 'shodan' | grep('ssl:bing.com', this) | quiet(this)\n"
+  },
+  {
+    "id": "9b624db0-a1dd-473a-818c-1bfc9060560d",
+    "title": "Detect CS Malleable (Gmail Profile)",
+    "description": "Detects Cobalt Strike infrastructure using the Gmail Malleable Profile by searching for unique strings in SSL certificate fields.",
+    "author": "none",
+    "tags": [
+      "intelops",
+      "shodan",
+      "evasion",
+      "malleable",
+      "cobaltstrike",
+      "certificate"
+    ],
+    "syntax": "from 'shodan' | grep('ssl:google', this) | grep('ssl:gmail.com', this) | quiet(this)\n"
+  },
+  {
+    "id": "812c087a-c2d2-4e31-9a22-bc6e36af3a24",
+    "title": "Detect CS Malleable (Windows Update Profile)",
+    "description": "Detects Cobalt Strike infrastructure using the Windows Update Malleable Profile by searching for unique strings and the \"404 not found\" string in SSL certificate fields.",
+    "author": "none",
+    "tags": [
+      "intelops",
+      "shodan",
+      "evasion",
+      "malleable",
+      "cobaltstrike",
+      "certificate"
+    ],
+    "syntax": "from 'shodan' | grep('windowsupdate.com', this) | quiet(this)\n"
+  },
+  {
+    "id": "6b3ab2eb-7185-4ce5-88ce-4bc87e6368a3",
+    "title": "Detect ReverseSSH (Cloudflare Cert)",
+    "description": "Detects ReverseSSH infrastructure using the specific Cloudflare certificate organization string.",
+    "author": "none",
+    "tags": [
+      "intelops",
+      "shodan",
+      "infrastructure",
+      "reversessh",
+      "cloudflare",
+      "certificate"
+    ],
+    "syntax": "from 'shodan' | grep('O=Cloudflare\\\\x5C, Inc', this) | quiet(this)\n"
+  },
+  {
+    "id": "c5a37a62-1e10-4332-a986-529bc38f110c",
+    "title": "Detect Open Directories (Python)",
+    "description": "Detects Python-based open directories using the specific title string.",
+    "author": "none",
+    "tags": [
+      "intelops",
+      "shodan",
+      "infrastructure",
+      "opendirectory"
+    ],
+    "syntax": "from 'shodan' | grep('Directory Listing for /', this) | quiet(this)\n"
+  },
+  {
+    "id": "62c0776d-4e9d-4183-b01e-50247a509e43",
+    "title": "Detect Open Directories (Apache/Nginx)",
+    "description": "Detects Apache/Nginx open directories using the common title string.",
+    "author": "none",
+    "tags": [
+      "intelops",
+      "shodan",
+      "infrastructure",
+      "opendirectory"
+    ],
+    "syntax": "from 'shodan' | grep('Index of ', this) | quiet(this)\n"
+  },
+  {
+    "id": "3a4b76ba-59fa-45ae-a552-5c79503a49dc",
+    "title": "Detect APT43/Kimsuky Cert Size (3072-bit)",
+    "description": "Detects APT43/Kimsuky infrastructure using the certificate attribute indicating a 3072-bit public key size.",
+    "author": "none",
+    "tags": [
+      "intelops",
+      "shodan",
+      "apt",
+      "apt43",
+      "kimsuky",
+      "certificate"
+    ],
+    "syntax": "from 'shodan' | grep('ssl:3072', this) | quiet(this)\n"
+  },
+  {
+    "id": "a4a9cd41-18eb-4de9-8708-e872ef893e01",
+    "title": "Detect APT43/Kimsuky Hosting Org (CHOOPA)",
+    "description": "Detects APT43/Kimsuky infrastructure hosted on AS-CHOOPA using the organization string 'The Constant Company LLC'.",
+    "author": "none",
+    "tags": [
+      "intelops",
+      "ipinfo",
+      "apt",
+      "apt43",
+      "kimsuky",
+      "hosting"
+    ],
+    "syntax": "from 'ipinfo' | grep('The Constant Company LLC', org) | quiet(this)\n"
+  },
+  {
+    "id": "f01094ae-0e20-4592-9daa-10308a7a0df2",
+    "title": "Detect APT38 planet.svg Hash",
+    "description": "Detects APT38/Bluenoroff infrastructure using the unique hash for the 'planet.svg' image component.",
+    "author": "none",
+    "tags": [
+      "intelops",
+      "shodan",
+      "apt",
+      "apt38",
+      "bluenoroff",
+      "hash"
+    ],
+    "syntax": "from 'shodan' | grep('2569d40b79d2172b54573e5dd72851b6ddcddedc7cc13f5fd71eb803aa6af3b5', this) | quiet(this)\n"
+  },
+  {
+    "id": "45f7e53c-df47-40d7-9700-3fefd38765a3",
+    "title": "Detect APT38 astronaut.svg Hash",
+    "description": "Detects APT38/Bluenoroff infrastructure using the unique hash for the 'astronaut.svg' image component.",
+    "author": "none",
+    "tags": [
+      "intelops",
+      "shodan",
+      "apt",
+      "apt38",
+      "bluenoroff",
+      "hash"
+    ],
+    "syntax": "from 'shodan' | grep('2c810eaa80d3ad8de67e01646b74ff2eebc945a8869d67c17088d277a27a461e', this) | quiet(this)\n"
+  },
+  {
+    "id": "de1e750a-e2a6-4154-bcfe-a2e1529c8183",
+    "title": "Detect APT38 404.css Hash",
+    "description": "Detects APT38/Bluenoroff infrastructure using the unique hash for the '404.css' file component.",
+    "author": "none",
+    "tags": [
+      "intelops",
+      "shodan",
+      "apt",
+      "apt38",
+      "bluenoroff",
+      "hash"
+    ],
+    "syntax": "from 'shodan' | grep('6d6cc5f6cf072f1a1d1db2a369ce38d58f922307383ac5e253a7881587c27c20', this) | quiet(this)\n"
+  },
+  {
+    "id": "aa5bda8c-2297-43b9-b720-487f09bc2d9f",
+    "title": "Detect COLDRIVER (SPICA) Port 3000 Banner",
+    "description": "Detects COLDRIVER (SPICA) C2 infrastructure using the specific banner response string observed on port 3000.",
+    "author": "none",
+    "tags": [
+      "intelops",
+      "shodan",
+      "c2",
+      "coldriver",
+      "spica",
+      "banner"
+    ],
+    "syntax": "from 'shodan' | grep('\\x15\\x03\\x03\\x00\\x02\\x02', this) | quiet(this)\n"
+  },
+  {
+    "id": "144719aa-0716-4c1f-a85b-b81a32fab492",
+    "title": "Detect DayBreak (BAS) Server Cert CN",
+    "description": "Detects DayBreak C2 using the default server certificate common name issuer.common_name=bas-server",
+    "author": "none",
+    "tags": [
+      "intelops",
+      "shodan",
+      "c2",
+      "bas",
+      "daybreak",
+      "certificate"
+    ],
+    "syntax": "from 'shodan' | grep('bas-server', this) | quiet(this)\n"
+  },
+  {
+    "id": "deea681a-53ad-475b-81ad-e9f40abfd043",
+    "title": "Detect ReverseSSH (Cloudflare, Inc. Cert)",
+    "description": "Detects ReverseSSH infrastructure using the specific Cloudflare certificate organization string 'Cloudflare, Inc'.",
+    "author": "none",
+    "tags": [
+      "intelops",
+      "shodan",
+      "infrastructure",
+      "reversessh",
+      "cloudflare",
+      "certificate"
+    ],
+    "syntax": "from 'shodan' | grep('Cloudflare\\\\x5C, Inc', this) | quiet(this)\n"
+  },
+  {
+    "id": "e7cc5c4a-ac90-4b86-a536-86fe52bd7ec2",
+    "title": "Detect PoshC2 Default Certificate Strings",
+    "description": "Detects PoshC2 infrastructure using default certificate strings (e.g., ssl:Pajfds ssl:P18055077).",
+    "author": "none",
+    "tags": [
+      "intelops",
+      "shodan",
+      "c2",
+      "poshc2",
+      "certificate"
+    ],
+    "syntax": "from 'shodan' | grep('P18055077', this) | quiet(this)\n"
+  },
+  {
+    "id": "c1dfa7b7-4a8f-48ed-813b-5e3f6420bfcd",
+    "title": "Detect Responder Deprecated Date String",
+    "description": "Detects deprecated versions of Responder using a hardcoded date string found in the banner.",
+    "author": "none",
+    "tags": [
+      "intelops",
+      "shodan",
+      "tool",
+      "responder"
+    ],
+    "syntax": "from 'shodan' | grep('Date: Wed, 12 Sep 2012 13:06:55 GMT', this) | quiet(this)\n"
+  },
+  {
+    "id": "5fe9f26f-56c5-4d73-843a-12693c2ae052",
+    "title": "Detect Scattered Spider OKTA Favicon Hash",
+    "description": "Detects Scattered Spider phishing infrastructure using the favicon hash for the OKTA sign-in page template.",
+    "author": "none",
+    "tags": [
+      "intelops",
+      "shodan",
+      "apt",
+      "scatteredspider",
+      "phishing",
+      "favicon"
+    ],
+    "syntax": "from 'shodan' | grep('1294997286', this) | quiet(this)\n"
+  },
+  {
+    "id": "934ad5b1-0e7a-4517-9f2b-580ccfdf08e7",
+    "title": "Detect Evilginx Admin Login Title",
+    "description": "Detects Evilginx phishing framework admin panel using the title string 'EvilginxLogin'.",
+    "author": "none",
+    "tags": [
+      "intelops",
+      "shodan",
+      "phishing",
+      "evilginx"
+    ],
+    "syntax": "from 'shodan' | grep('EvilginxLogin', this) | quiet(this)\n"
+  },
+  {
+    "id": "7d3488e6-6b65-4ca6-84cc-26f1ec719a4b",
+    "title": "Detect Evilginx Rickroll Image Hash 1",
+    "description": "Detects Evilginx infrastructure using a SHA-256 hash of a Rick Astley redirection image (Example 1).",
+    "author": "none",
+    "tags": [
+      "intelops",
+      "shodan",
+      "phishing",
+      "evilginx",
+      "hash"
+    ],
+    "syntax": "from 'shodan' | grep('405893b0bf0b3e87141e7048e1cb6665ca5593fea1b159ca0ce90e77d049c51a', this) | quiet(this)\n"
+  },
+  {
+    "id": "089b17ff-561e-450b-9dc2-e8bf2012ab09",
+    "title": "Detect Evilginx Rickroll Image Hash 2",
+    "description": "Detects Evilginx infrastructure using a SHA-256 hash of a Rick Astley redirection image (Example 2).",
+    "author": "none",
+    "tags": [
+      "intelops",
+      "shodan",
+      "phishing",
+      "evilginx",
+      "hash"
+    ],
+    "syntax": "from 'shodan' | grep('2fc77b4a0620f5dca2d3cae6d917af3acdeb3b2e5558ba1727f8d651351fc692', this) | quiet(this)\n"
+  },
+  {
+    "id": "ab902b52-b841-4b3d-980f-865ef8080f6d",
+    "title": "Detect Open Directory (Directory /)",
+    "description": "Detects generic open directories using the alternate title string Directory",
+    "author": "none",
+    "tags": [
+      "intelops",
+      "shodan",
+      "infrastructure",
+      "opendirectory"
+    ],
+    "syntax": "from 'shodan' | grep('Directory: /', this) | quiet(this)\n"
+  },
+  {
+    "id": "ba0f408a-dbe1-405f-b1bc-19a94ec2a37d",
+    "title": "Detect Open Directory (Directory listing of /)",
+    "description": "Detects generic open directories using the alternate title string 'Directory listing of /'.",
+    "author": "none",
+    "tags": [
+      "intelops",
+      "shodan",
+      "infrastructure",
+      "opendirectory"
+    ],
+    "syntax": "from 'shodan' | grep('Directory listing of /', this) | quiet(this)\n"
+  },
+  {
+    "id": "a3f04ff3-1288-44cc-a8d5-67c8118cc02b",
+    "title": "Detect Open Directory File .exe",
+    "description": "Detects exposed directories containing the malicious file extension '.exe'.",
+    "author": "none",
+    "tags": [
+      "intelops",
+      "shodan",
+      "infrastructure",
+      "opendirectory",
+      "malware"
+    ],
+    "syntax": "from 'shodan' | grep('.exe', this) | quiet(this)\n"
+  },
+  {
+    "id": "3b0458ad-d5d7-453f-8539-6f041deddbff",
+    "title": "Detect Open Directory File .dll",
+    "description": "Detects exposed directories containing the malicious file extension '.dll'.",
+    "author": "none",
+    "tags": [
+      "intelops",
+      "shodan",
+      "infrastructure",
+      "opendirectory",
+      "malware"
+    ],
+    "syntax": "from 'shodan' | grep('.dll', this) | quiet(this)\n"
+  },
+  {
+    "id": "4e7b5a31-4806-4966-b9d3-953f73a38629",
+    "title": "Detect Open Directory File .aspx",
+    "description": "Detects exposed directories containing the file extension '.aspx', often indicating web shells or command execution endpoints.",
+    "author": "none",
+    "tags": [
+      "intelops",
+      "shodan",
+      "infrastructure",
+      "opendirectory",
+      "webshell"
+    ],
+    "syntax": "from 'shodan' | grep('.aspx', this) | quiet(this)\n"
+  },
+  {
+    "id": "b4eb7e62-36b6-4091-943e-648f73e814b2",
+    "title": "Detect Open Directory Filename Cobalt Strike",
+    "description": "Detects exposed Cobalt Strike files within open directories.",
+    "author": "none",
+    "tags": [
+      "intelops",
+      "shodan",
+      "infrastructure",
+      "opendirectory",
+      "cobaltstrike"
+    ],
+    "syntax": "from 'shodan' | grep('Cobalt Strike', this) | quiet(this)\n"
+  },
+  {
+    "id": "7f37e68a-1ed9-4d89-8998-7ddf1348c7ab",
+    "title": "Detect Open Directory Filename Meterpreter",
+    "description": "Detects exposed Meterpreter files within open directories.",
+    "author": "none",
+    "tags": [
+      "intelops",
+      "shodan",
+      "infrastructure",
+      "opendirectory",
+      "meterpreter"
+    ],
+    "syntax": "from 'shodan' | grep('Meterpreter', this) | quiet(this)\n"
+  },
+  {
+    "id": "945dc4a7-4545-4ae4-8368-b428b2dfb8ec",
+    "title": "Detect Open Directory Filename bloodhound",
+    "description": "Detects exposed Bloodhound reconnaissance tool files within open directories.",
+    "author": "none",
+    "tags": [
+      "intelops",
+      "shodan",
+      "infrastructure",
+      "opendirectory",
+      "tool"
+    ],
+    "syntax": "from 'shodan' | grep('bloodhound', this) | quiet(this)\n"
+  },
+  {
+    "id": "44dae159-b715-4fe9-8665-8b28a1540cec",
+    "title": "Detect Open Directory Related Term fud.exe",
+    "description": "Detects files related to 'Fully Undetectable' (FUD) malware within open directories.",
+    "author": "none",
+    "tags": [
+      "intelops",
+      "shodan",
+      "infrastructure",
+      "opendirectory",
+      "malware"
+    ],
+    "syntax": "from 'shodan' | grep('fud.exe', this) | quiet(this)\n"
+  },
+  {
+    "id": "3d03fe19-794f-4341-b9cf-a62a5125a350",
+    "title": "Detect Open Directory Related Term ransomNote",
+    "description": "Detects files related to ransomware (e.g., ransom notes) within open directories.",
+    "author": "none",
+    "tags": [
+      "intelops",
+      "shodan",
+      "infrastructure",
+      "opendirectory",
+      "ransomware"
+    ],
+    "syntax": "from 'shodan' | grep('ransomNote', this) | quiet(this)\n"
   }
 ]

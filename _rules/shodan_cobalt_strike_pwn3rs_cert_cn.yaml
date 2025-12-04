@@ -1,0 +1,12 @@
+id: 75b4d112-846b-4bf7-8122-f6cb49e216cf
+title: Detect Cobalt Strike Pwn3rs Striked CN
+description: Detects the custom certificate CN from a cracked Cobalt Strike version (Pwn3rs Striked).
+author: "none"
+tags:
+  - intelops
+  - shodan
+  - c2
+  - cobaltstrike
+  - certificate
+syntax: |
+  from 'shodan' | grep('Pwn3rs Striked', this) | quiet(this)

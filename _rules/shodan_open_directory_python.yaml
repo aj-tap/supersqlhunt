@@ -1,0 +1,11 @@
+id: c5a37a62-1e10-4332-a986-529bc38f110c
+title: Detect Open Directories (Python)
+description: Detects Python-based open directories using the specific title string.
+author: "none"
+tags:
+  - intelops
+  - shodan
+  - infrastructure
+  - opendirectory
+syntax: |
+  from 'shodan' | grep('Directory Listing for /', this) | quiet(this)

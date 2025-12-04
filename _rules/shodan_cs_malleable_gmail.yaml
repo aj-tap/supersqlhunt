@@ -1,0 +1,13 @@
+id: 9b624db0-a1dd-473a-818c-1bfc9060560d
+title: Detect CS Malleable (Gmail Profile)
+description: Detects Cobalt Strike infrastructure using the Gmail Malleable Profile by searching for unique strings in SSL certificate fields.
+author: "none"
+tags:
+  - intelops
+  - shodan
+  - evasion
+  - malleable
+  - cobaltstrike
+  - certificate
+syntax: |
+  from 'shodan' | grep('ssl:google', this) | grep('ssl:gmail.com', this) | quiet(this)

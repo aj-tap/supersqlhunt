@@ -1,0 +1,14 @@
+id: 9d23afb1-b1a0-4e5c-a93d-1293cefcfbf5
+title: Detect APT38 RDP Certificate CN
+description: Detects APT38/Bluenoroff infrastructure using the RDP certificate subject Common Name (CN).
+author: "none"
+tags:
+  - intelops
+  - shodan
+  - apt
+  - apt38
+  - bluenoroff
+  - rdp
+  - certificate
+syntax: |
+  from 'shodan' | grep('hwc-hwp-7779700', this) | quiet(this)

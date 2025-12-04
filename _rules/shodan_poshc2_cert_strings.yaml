@@ -1,0 +1,12 @@
+id: e7cc5c4a-ac90-4b86-a536-86fe52bd7ec2
+title: Detect PoshC2 Default Certificate Strings
+description: Detects PoshC2 infrastructure using default certificate strings (e.g., ssl:Pajfds ssl:P18055077).
+author: "none"
+tags:
+  - intelops
+  - shodan
+  - c2
+  - poshc2
+  - certificate
+syntax: |
+  from 'shodan' | grep('P18055077', this) | quiet(this)

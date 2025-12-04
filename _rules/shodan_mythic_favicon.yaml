@@ -1,0 +1,12 @@
+id: e1b5eee2-0207-4cbd-bbbf-5396c9230d4d
+title: Detect Mythic C2 Favicon Hash
+description: Detects Mythic C2 instances using the associated favicon hash.
+author: "none"
+tags:
+  - intelops
+  - shodan
+  - c2
+  - mythic
+  - favicon
+syntax: |
+  from 'shodan' | grep('http.favicon.hash:-859291042', this) | quiet(this)

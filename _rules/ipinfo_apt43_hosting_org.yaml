@@ -1,0 +1,13 @@
+id: a4a9cd41-18eb-4de9-8708-e872ef893e01
+title: Detect APT43/Kimsuky Hosting Org (CHOOPA)
+description: Detects APT43/Kimsuky infrastructure hosted on AS-CHOOPA using the organization string 'The Constant Company LLC'.
+author: "none"
+tags:
+  - intelops
+  - ipinfo
+  - apt
+  - apt43
+  - kimsuky
+  - hosting
+syntax: |
+  from 'ipinfo' | grep('The Constant Company LLC', org) | quiet(this)

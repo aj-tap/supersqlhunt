@@ -1,0 +1,12 @@
+id: c592b886-afc6-4005-895b-0fa4baece838
+title: Detect Havoc C2 JARM
+description: Detects Havoc C2 infrastructure via JARM fingerprint.
+author: "none"
+tags:
+  - intelops
+  - shodan
+  - c2
+  - jarm
+  - havoc
+syntax: |
+  from 'shodan' | grep('3fd21b20d00000021c43d21b21b43de0a012c76cf078b8d06f4620c2286f5e', this) | quiet(this)

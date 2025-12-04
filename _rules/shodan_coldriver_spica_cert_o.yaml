@@ -1,0 +1,13 @@
+id: 635f0946-7fee-4f37-aea3-ca47b1372f2a
+title: Detect COLDRIVER (SPICA) Certificate CN
+description: Detects SPICA Backdoor C2s using the SSL Certificate common name 'Internet Widgits Pty Ltd'.
+author: "none"
+tags:
+  - intelops
+  - shodan
+  - c2
+  - coldriver
+  - spica
+  - certificate
+syntax: |
+  from 'shodan' | grep('Internet Widgits Pty Ltd', this) | quiet(this)

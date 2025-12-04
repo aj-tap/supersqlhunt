@@ -1,0 +1,12 @@
+id: c6c11286-b6d9-494d-8024-9154609a4327
+title: Detect Sliver C2 JARM
+description: Detects Sliver C2 infrastructure via JARM fingerprint.
+author: "none"
+tags:
+  - intelops
+  - shodan
+  - c2
+  - jarm
+  - sliver
+syntax: |
+  from 'shodan' | grep('3fd21b20d00000021c43d21b21b43d41226dd5dfc615dd4a96265559485910', this) | quiet(this)

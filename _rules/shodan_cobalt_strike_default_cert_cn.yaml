@@ -1,0 +1,12 @@
+id: f4b52437-8a48-4fed-a31a-bf89e6275961
+title: Detect Cobalt Strike Default Certificate CN
+description: Detects the default subject Common Name (CN) found in CS default certificates CN=Major Cobalt Strike.
+author: "none"
+tags:
+  - intelops
+  - shodan
+  - c2
+  - cobaltstrike
+  - certificate
+syntax: |
+  from 'shodan' | grep('Major Cobalt Strike', this) | quiet(this)

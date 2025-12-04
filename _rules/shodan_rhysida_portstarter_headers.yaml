@@ -1,0 +1,13 @@
+id: 41b02882-65da-4c25-84c9-313f5f018f57
+title: Detect Rhysida PortStarter Headers
+description: Detects Rhysida (PortStarter) C2 using the unique combination of HTTP Server header and Www-Authenticate field.
+author: "none"
+tags:
+  - intelops
+  - shodan
+  - c2
+  - ransomware
+  - rhysida
+  - portstarter
+syntax: |
+  from 'shodan' | grep('Server: BaseHTTP/0.6 Python/3.8.10 Www-Authenticate: Basic realm=Demo Realm', this) | quiet(this)

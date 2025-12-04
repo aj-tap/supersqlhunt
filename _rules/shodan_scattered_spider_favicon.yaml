@@ -1,0 +1,13 @@
+id: 5fe9f26f-56c5-4d73-843a-12693c2ae052
+title: Detect Scattered Spider OKTA Favicon Hash
+description: Detects Scattered Spider phishing infrastructure using the favicon hash for the OKTA sign-in page template.
+author: "none"
+tags:
+  - intelops
+  - shodan
+  - apt
+  - scatteredspider
+  - phishing
+  - favicon
+syntax: |
+  from 'shodan' | grep('1294997286', this) | quiet(this)

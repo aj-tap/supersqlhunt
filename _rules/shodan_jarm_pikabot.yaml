@@ -1,0 +1,12 @@
+id: ed623793-262e-449b-8e50-060af08fcdc5
+title: Detect Pikabot C2 JARM
+description: Detects Pikabot C2 servers using randomized certificates via JARM fingerprint.
+author: "none"
+tags:
+  - intelops
+  - shodan
+  - c2
+  - jarm
+  - pikabot
+syntax: |
+  from 'shodan' | grep('21d19d00021d21d21c21d19d21d21dd188f9fdeea4d1b361be3a6ec494b2d2', this) | quiet(this)

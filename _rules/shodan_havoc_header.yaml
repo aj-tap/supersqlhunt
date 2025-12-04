@@ -1,0 +1,11 @@
+id: 73e322e8-bf72-4e5b-9172-0a3fcc149a17
+title: Detect Havoc C2 HTTP Header
+description: Detects Havoc C2 instances using the hardcoded 'x-havoc true' HTTP header string.
+author: "none"
+tags:
+  - intelops
+  - shodan
+  - c2
+  - havoc
+syntax: |
+  from 'shodan' | grep('x-havoc: true', this) | quiet(this)

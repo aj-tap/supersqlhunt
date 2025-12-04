@@ -1,0 +1,12 @@
+id: ba04d0e5-246c-488c-b4fa-29a3eebebbb3
+title: Detect Manjusaka C2 HTTP Redirect
+description: Detects Manjusaka C2 infrastructure using the default clear text HTTP redirection destination.
+author: "none"
+tags:
+  - intelops
+  - shodan
+  - c2
+  - manjusaka
+  - redirection
+syntax: |
+  from 'shodan' | grep('Location: http://www.microsoft.com', this) | quiet(this)

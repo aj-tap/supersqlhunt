@@ -1,0 +1,11 @@
+id: ff47b73c-26a8-4e19-b842-df71d586bbe3
+title: Detect Gophish Login Page Title
+description: Detects Gophish phishing panels using the default login page title.
+author: "none"
+tags:
+  - intelops
+  - shodan
+  - phishing
+  - gophish
+syntax: |
+  from 'shodan' | grep('Gophish - Login', this) | quiet(this)

@@ -1,0 +1,12 @@
+id: 7f37e68a-1ed9-4d89-8998-7ddf1348c7ab
+title: Detect Open Directory Filename Meterpreter
+description: Detects exposed Meterpreter files within open directories.
+author: "none"
+tags:
+  - intelops
+  - shodan
+  - infrastructure
+  - opendirectory
+  - meterpreter
+syntax: |
+  from 'shodan' | grep('Meterpreter', this) | quiet(this)

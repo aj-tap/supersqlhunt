@@ -1,0 +1,12 @@
+id: 3d03fe19-794f-4341-b9cf-a62a5125a350
+title: Detect Open Directory Related Term ransomNote
+description: Detects files related to ransomware (e.g., ransom notes) within open directories.
+author: "none"
+tags:
+  - intelops
+  - shodan
+  - infrastructure
+  - opendirectory
+  - ransomware
+syntax: |
+  from 'shodan' | grep('ransomNote', this) | quiet(this)
